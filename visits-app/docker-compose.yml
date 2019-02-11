@@ -1,9 +1,9 @@
 version: '3'
 services:
     redis-server:
-        image: 'redis'       # Builds from image
+        image: 'redis'           # Builds from image
     node-app:
-        restart: always      # If this container crashes, apply this restart policy
-        build: .             # Builds from Dockerfile
+        restart: on-failure      # If this container crashes, apply this restart policy
+        build: .                 # Builds from Dockerfile
         ports:
-            - "8081:8081"    # '-' specifies array (can map multiple ports)
+            - "8081:8081"        # '-' specifies array (can map multiple ports)
