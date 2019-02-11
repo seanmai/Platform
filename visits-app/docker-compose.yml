@@ -1,0 +1,8 @@
+version: '3'
+services:
+    redis-server:
+        image: 'redis'       # Builds from image
+    node-app:
+        build: .             # Builds from Dockerfile
+        ports:
+            - "8081:8081"    # '-' specifies array (can map multiple ports)
